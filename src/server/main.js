@@ -4,9 +4,8 @@ import config from '../config/default';
 let app = express();
 
 app.get('/', function(_req, _res){
-    _res.send("hello");
+    _res.send("hello222");
 });
 
-app.listen(config.port, function(){
-    console.log(`Express Server started on ${config.port}.`);
-});
+
+export default app;

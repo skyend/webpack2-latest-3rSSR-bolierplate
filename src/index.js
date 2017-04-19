@@ -1,4 +1,12 @@
-import A from './test';
+import React from 'react'
+import ReactDOM from 'react-dom';
+
+import App from './app';
 
 
-A();
+ReactDOM.render(
+    <App/>,
+    document.getElementById('app-container')
+)
+
+

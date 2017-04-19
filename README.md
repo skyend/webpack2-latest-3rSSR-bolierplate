@@ -28,3 +28,8 @@ npm run start
 * Redux
 
 * React Router
+
+
+# Author
+
+skyend(jinwoong han) - theskyend0@gmail.com
