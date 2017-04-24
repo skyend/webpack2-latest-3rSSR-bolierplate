@@ -1,0 +1,20 @@
+//<!DOCTYPE html>
+//<html>
+//    <head>
+//        <title>Webpack2 3R SSR Project</title>
+//        <meta charset="utf-8">
+//    </head>
+//    <body>
+//        <div id="app-container"></div>
+//    </body>
+//</html>
+//
+
+html
+  head
+    title= title
+  body
+    div(id='app-container')
+
+    each val in scripts
+      script(src=val)

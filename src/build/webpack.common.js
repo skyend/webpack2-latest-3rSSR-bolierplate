@@ -26,7 +26,7 @@ var options = {
     },
 
     output:{
-        filename : '[name].[hash].js',
+        filename : '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
 
@@ -41,6 +41,43 @@ var options = {
                         options : {}
                     }
                 ]
+            },
+
+
+            {
+                test : /\.scss$/,
+                use : [
+                    {
+                        loader : 'style-loader',
+                        options : {
+                            sourceMap : config.isdev
+                        }
+                    },
+
+                    {
+                        loader : 'css-loader',
+                        options : {
+                            localIndentName : '[hash:base64]-[name]-[local]',
+                            module : true,
+                            sourceMap : config.isdev
+                        }
+                    },
+
+                    // {
+                    //     loader : 'postcss-loader',
+                    //     options : {
+                    //         sourceMap : config.isdev
+                    //     }
+                    // },
+
+                    {
+                        loader : 'sass-loader',
+                        options : {
+                            sourceMap : config.isdev,
+                            includePath: path.resolve(__dirname, 'assets/styles')
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -53,10 +90,10 @@ var options = {
 
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new HTMLWebpackPlugin({
-            filename : 'index.html',
-            template : './src/index.html'
-        }),
+        // new HTMLWebpackPlugin({
+        //     filename : 'index.pug',
+        //     template : './src/view/index.pug'
+        // }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         })

@@ -1,5 +1,6 @@
 var config =  {
     port : process.env.PORT || 8080,
+    isdev : process.env.NODE_ENV === 'development'
 }
 
 

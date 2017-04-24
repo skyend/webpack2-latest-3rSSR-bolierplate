@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import Layout from './components/layout'
 
 class App extends Component {
     constructor(props){
@@ -9,7 +9,7 @@ class App extends Component {
     render(){
 
         return <div>
-              s
+              <Layout/>
         </div>;
     }
 }
